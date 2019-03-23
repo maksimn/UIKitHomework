@@ -7,10 +7,12 @@
 //
 
 #import "MainViewController.h"
+#import "LCTCustomView.h"
 
 @interface MainViewController ()
 
 @property (nonatomic, strong) UIButton *refreshButton;
+@property (nonatomic, strong) LCTCustomView* customView;
 
 @end
 
@@ -24,6 +26,8 @@
     
     [self setupRefreshButton];
     
+    //подготовка интерфейса ВТОРАЯ ЧАСТЬ ЗАНЯТИЯ
+    [self prepareUi_NEW];
 }
 
 - (void) setupRefreshButton
@@ -35,6 +39,16 @@
     self.refreshButton.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.refreshButton];
+}
+
+//подготовка интерфейса
+- (void) prepareUi_NEW
+{
+    //создали предствавление
+    self.customView = [[LCTCustomView alloc] initWithFrame:CGRectMake(50, 160, 60, 70)];
+    self.customView.backgroundColor = UIColor.redColor;
+    //добавили его на экран
+    [self.view addSubview:self.customView];
 }
 
 @end
