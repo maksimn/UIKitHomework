@@ -32,7 +32,7 @@
 
 - (void) setupRefreshButton
 {
-    self.refreshButton = [[UIButton alloc] initWithFrame:CGRectMake(50,60,120,40)];
+    self.refreshButton = [[UIButton alloc] initWithFrame:CGRectMake(50,30,120,40)];
     
     [self.refreshButton setTitle:@"Обновить" forState:UIControlStateNormal];
     [self.refreshButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -45,7 +45,7 @@
 - (void) prepareUi_NEW
 {
     //создали предствавление
-    self.customView = [[LCTCustomView alloc] initWithFrame:CGRectMake(50, 160, 60, 70)];
+    self.customView = [[LCTCustomView alloc] initWithFrame:CGRectMake(50, 100, 60, 70)];
     self.customView.backgroundColor = UIColor.redColor;
     //добавили его на экран
     [self.view addSubview:self.customView];
