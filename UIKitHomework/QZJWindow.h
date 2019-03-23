@@ -1,5 +1,5 @@
 //
-//  LCTCustomView.h
+//  QZJWindow.h
 //  UIKitHomework
 //
 //  Created by Maksim Ivanov on 23/03/2019.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LCTCustomView : UIView
+@interface QZJWindow : UIWindow
 
 @end
 

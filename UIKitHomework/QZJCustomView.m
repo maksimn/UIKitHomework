@@ -6,11 +6,11 @@
 //  Copyright © 2019 Maksim Ivanov. All rights reserved.
 //
 
-#import "LCTCustomView.h"
+#import "QZJCustomView.h"
 
 //====================== ВТОРАЯ ЧАСТЬ ЗАНЯТИЯ 1) СОБЫТИЯ КАCАНИЯ ЭКРАНА ======================
 
-@implementation LCTCustomView
+@implementation QZJCustomView
 
 // Координаты начального касания внутри прямоугольника вьюхи:
 double offsetX;
@@ -33,7 +33,6 @@ double offsetY;
     //====================== ВТОРАЯ ЧАСТЬ ЗАНЯТИЯ 2)ДВИГАЕМ ВЬЮХУ ЗА ТОЧКОЙ КАСАНИЯ ======================
     point.x = point.x + self.frame.origin.x + offsetX;
     point.y = point.y + self.frame.origin.y + offsetY;
-    NSLog(@"Перетаскивание2 %.0f %.0f", point.x, point.y);
     
     self.center = point;
 }

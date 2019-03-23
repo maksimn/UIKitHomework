@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "QZJWindow.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window = [UIWindow new];
+    self.window = [QZJWindow new];
     MainViewController *mainViewController = [MainViewController new];
     self.window.rootViewController = mainViewController;
     [self.window makeKeyAndVisible];

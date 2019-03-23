@@ -7,12 +7,12 @@
 //
 
 #import "MainViewController.h"
-#import "LCTCustomView.h"
+#import "QZJCustomView.h"
 
 @interface MainViewController ()
 
 @property (nonatomic, strong) UIButton *refreshButton;
-@property (nonatomic, strong) LCTCustomView* customView;
+@property (nonatomic, strong) QZJCustomView* customView;
 
 @end
 
@@ -45,7 +45,7 @@
 - (void) prepareUi_NEW
 {
     //создали предствавление
-    self.customView = [[LCTCustomView alloc] initWithFrame:CGRectMake(50, 100, 60, 70)];
+    self.customView = [[QZJCustomView alloc] initWithFrame:CGRectMake(50, 100, 60, 70)];
     self.customView.backgroundColor = UIColor.redColor;
     //добавили его на экран
     [self.view addSubview:self.customView];
