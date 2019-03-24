@@ -25,6 +25,7 @@
     //подготовка интерфейса ВТОРАЯ ЧАСТЬ ЗАНЯТИЯ
     [self setupRefreshButton];
     [self prepareUi_NEW];
+    self.view.backgroundColor = [UIColor greenColor];
 }
 
 - (void) setupRefreshButton

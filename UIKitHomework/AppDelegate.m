@@ -16,7 +16,6 @@
     self.window = [UIWindow new];
     
     // Задание обработки жеста движения пальцем слева направо:
-    self.window.backgroundColor = [UIColor greenColor];
     UIPanGestureRecognizer *recognizer = [UIPanGestureRecognizer new];
     [recognizer addTarget:self action:@selector(hanglePanGesture:)];
     recognizer.cancelsTouchesInView = NO;
