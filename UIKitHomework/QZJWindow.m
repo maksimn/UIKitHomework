@@ -12,21 +12,30 @@
 
 - (instancetype) init
 {
-    self = [super init];
-    self.backgroundColor = [UIColor greenColor];
+    if (self = [super init])
+    {
+        self.backgroundColor = [UIColor greenColor];
+        UIPanGestureRecognizer *recognizer = [UIPanGestureRecognizer new];
+        [recognizer addTarget:self action:@selector(hanglePanGesture:)];
+        [self addGestureRecognizer:recognizer];
+    }
     return self;
 }
 
 // Сделать изменение цветовой окраски экрана при движении пальце слева направо от черного до белого цвета. (.backgroundColor = [UIColor colorWithRed:[0-1] green:[0-1] blue:[0-1])
 
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void) hanglePanGesture:(UIPanGestureRecognizer *)gestureRecognizer
 {
-    UITouch *touch = touches.anyObject;
-    CGPoint point = [touch locationInView:self];
+    CGPoint gesturePoint = [gestureRecognizer locationInView: self];
+    
+    NSLog(@"Point = %f , %f", gesturePoint.x, gesturePoint.y);
     double width = self.frame.size.width;
-    double value = point.x / width;
+    double value = gesturePoint.x / width;
     self.backgroundColor = [UIColor colorWithRed:value green:value blue:value alpha:1.0];
-    // NSLog(@"Окно %.0f %.0f", point.x, point.y);
+//    NSLog(@"gestureRecognizer.cancelsTouchesInView = %d", gestureRecognizer.cancelsTouchesInView);
+//    NSLog(@"gestureRecognizer.delaysTouchesBegan = %d", gestureRecognizer.delaysTouchesBegan);
+//    NSLog(@"gestureRecognizer.delaysTouchesEnded = %d", gestureRecognizer.delaysTouchesEnded);
+//    NSLog(@"Свайп свайп свайп");
 }
 
 /*
