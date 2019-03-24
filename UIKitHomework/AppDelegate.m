@@ -19,6 +19,7 @@
     self.window.backgroundColor = [UIColor greenColor];
     UIPanGestureRecognizer *recognizer = [UIPanGestureRecognizer new];
     [recognizer addTarget:self action:@selector(hanglePanGesture:)];
+    recognizer.cancelsTouchesInView = NO;
     [self.window addGestureRecognizer:recognizer];
     
     // Задание ViewController'a:
@@ -29,6 +30,7 @@
     return YES;
 }
 
+BOOL isStartedAtLeftBorder = NO;
 double previousX;
 
 - (void) hanglePanGesture:(UIPanGestureRecognizer *)gestureRecognizer
@@ -36,20 +38,29 @@ double previousX;
     int state = gestureRecognizer.state;
     CGPoint gesturePoint = [gestureRecognizer locationInView: self.window];
     double screenWidth = self.window.frame.size.width;
+    double x0MaxValue = screenWidth / 7;
     double colorValue;
     
     switch (state)
     {
         case UIGestureRecognizerStateBegan:
+            if (gesturePoint.x < x0MaxValue)
+            {
+                isStartedAtLeftBorder = YES;
+            }
             break;
             
         case UIGestureRecognizerStateChanged:
             
-            if (gesturePoint.x >= previousX)
+            if (isStartedAtLeftBorder && gesturePoint.x >= previousX)
             {
                 colorValue = gesturePoint.x / screenWidth;
                 self.window.backgroundColor = [UIColor colorWithRed:colorValue green:colorValue blue:colorValue alpha:1.0];
             }
+            break;
+            
+        case UIGestureRecognizerStateEnded:
+            isStartedAtLeftBorder = NO;
             break;
         
         default:
