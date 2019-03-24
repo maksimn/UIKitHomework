@@ -36,6 +36,8 @@
     self.refreshButton.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.refreshButton];
+    
+    [self.refreshButton addTarget:self action:@selector(refreshButtonPressHandler) forControlEvents:UIControlEventTouchUpInside];
 }
 
 //подготовка интерфейса
@@ -46,6 +48,11 @@
     self.customView.backgroundColor = UIColor.redColor;
     //добавили его на экран
     [self.view addSubview:self.customView];
+}
+
+- (void) refreshButtonPressHandler
+{
+    NSLog(@"refreshButtonPressHandler");
 }
 
 @end
