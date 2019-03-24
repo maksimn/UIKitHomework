@@ -10,7 +10,8 @@
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     // Override point for customization after application launch.
     self.window = [UIWindow new];
     
@@ -28,12 +29,34 @@
     return YES;
 }
 
+double previousX;
+
 - (void) hanglePanGesture:(UIPanGestureRecognizer *)gestureRecognizer
 {
+    int state = gestureRecognizer.state;
     CGPoint gesturePoint = [gestureRecognizer locationInView: self.window];
-    double width = self.window.frame.size.width;
-    double value = gesturePoint.x / width;
-    self.window.backgroundColor = [UIColor colorWithRed:value green:value blue:value alpha:1.0];
+    double screenWidth = self.window.frame.size.width;
+    double colorValue;
+    
+    switch (state)
+    {
+        case UIGestureRecognizerStateBegan:
+            break;
+            
+        case UIGestureRecognizerStateChanged:
+            
+            if (gesturePoint.x >= previousX)
+            {
+                colorValue = gesturePoint.x / screenWidth;
+                self.window.backgroundColor = [UIColor colorWithRed:colorValue green:colorValue blue:colorValue alpha:1.0];
+            }
+            break;
+        
+        default:
+            break;
+    }
+    
+    previousX = gesturePoint.x;
 }
 
 @end
