@@ -6,11 +6,11 @@
 //  Copyright © 2019 Maksim Ivanov. All rights reserved.
 //
 
-#import "QZJCustomView.h"
+#import "AMXCustomView.h"
 
 //====================== ВТОРАЯ ЧАСТЬ ЗАНЯТИЯ 1) СОБЫТИЯ КАCАНИЯ ЭКРАНА ======================
 
-@implementation QZJCustomView
+@implementation AMXCustomView
 
 // Координаты начального касания внутри прямоугольника вьюхи:
 double offsetX;
