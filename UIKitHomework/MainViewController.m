@@ -22,11 +22,8 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor greenColor];
-    
-    [self setupRefreshButton];
-    
     //подготовка интерфейса ВТОРАЯ ЧАСТЬ ЗАНЯТИЯ
+    [self setupRefreshButton];
     [self prepareUi_NEW];
 }
 
