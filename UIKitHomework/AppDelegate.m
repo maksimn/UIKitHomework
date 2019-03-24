@@ -20,7 +20,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [QZJWindow new];
-    self.window.backgroundColor = [UIColor greenColor];
     MainViewController *mainViewController = [MainViewController new];
     self.window.rootViewController = mainViewController;
     [self.window makeKeyAndVisible];

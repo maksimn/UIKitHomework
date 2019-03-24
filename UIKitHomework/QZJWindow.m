@@ -10,6 +10,13 @@
 
 @implementation QZJWindow
 
+- (instancetype) init
+{
+    self = [super init];
+    self.backgroundColor = [UIColor greenColor];
+    return self;
+}
+
 // Сделать изменение цветовой окраски экрана при движении пальце слева направо от черного до белого цвета. (.backgroundColor = [UIColor colorWithRed:[0-1] green:[0-1] blue:[0-1])
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
