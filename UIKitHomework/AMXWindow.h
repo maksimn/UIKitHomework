@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AMXWindow : UIWindow
 
--(UIColor *) getInitialWindowColor;
+-(UIColor *) getInitialColor;
 
 @end
 

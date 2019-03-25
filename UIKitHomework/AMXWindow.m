@@ -14,7 +14,7 @@
 {
     if (self = [super init])
     {
-        self.backgroundColor = [self getInitialWindowColor];
+        self.backgroundColor = [self getInitialColor];
     }
     return self;
 }
@@ -27,7 +27,7 @@ double previousX;
     UITouch *touch = touches.anyObject;
     CGPoint point = [touch locationInView:self];
     double screenWidth = self.frame.size.width;
-    double x0MaxValue = screenWidth / 7;
+    double x0MaxValue = screenWidth / 10;
     
     if (point.x < x0MaxValue)
     {
@@ -57,10 +57,10 @@ double previousX;
 
 -(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    self.backgroundColor = [self getInitialWindowColor];
+    self.backgroundColor = [self getInitialColor];
 }
 
--(UIColor *) getInitialWindowColor
+-(UIColor *) getInitialColor
 {
     return [UIColor greenColor];
 }
