@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "AMXCustomView.h"
+#import "AMXWindow.h"
 
 @interface MainViewController ()
 
@@ -25,8 +26,9 @@
     //подготовка интерфейса ВТОРАЯ ЧАСТЬ ЗАНЯТИЯ
     [self setupRefreshButton];
     [self prepareUi_NEW];
-    self.view.backgroundColor = [UIColor greenColor];
-    [self prepareGestureRecognizer];
+    
+    AMXWindow *amxWindow = (AMXWindow *) self.view.window;
+    self.view.window.backgroundColor = [amxWindow getInitialWindowColor];
 }
 
 - (void) setupRefreshButton
@@ -56,55 +58,6 @@
 {
     [[self.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self viewDidLoad];
-}
-
-- (void) prepareGestureRecognizer
-{
-    // Задание обработки жеста движения пальцем слева направо:
-    UIPanGestureRecognizer *recognizer = [UIPanGestureRecognizer new];
-    [recognizer addTarget:self action:@selector(hanglePanGesture:)];
-    recognizer.cancelsTouchesInView = NO;
-    [self.view addGestureRecognizer:recognizer];
-}
-
-BOOL isStartedAtLeftBorder = NO;
-double previousX;
-
-- (void) hanglePanGesture:(UIPanGestureRecognizer *)gestureRecognizer
-{
-    int state = gestureRecognizer.state;
-    CGPoint gesturePoint = [gestureRecognizer locationInView: self.view];
-    double screenWidth = self.view.frame.size.width;
-    double x0MaxValue = screenWidth / 7;
-    double colorValue;
-    
-    switch (state)
-    {
-        case UIGestureRecognizerStateBegan:
-            if (gesturePoint.x < x0MaxValue)
-            {
-                isStartedAtLeftBorder = YES;
-            }
-            break;
-            
-        case UIGestureRecognizerStateChanged:
-            
-            if (isStartedAtLeftBorder && gesturePoint.x >= previousX)
-            {
-                colorValue = gesturePoint.x / screenWidth;
-                self.view.backgroundColor = [UIColor colorWithRed:colorValue green:colorValue blue:colorValue alpha:1.0];
-            }
-            break;
-            
-        case UIGestureRecognizerStateEnded:
-            isStartedAtLeftBorder = NO;
-            break;
-            
-        default:
-            break;
-    }
-    
-    previousX = gesturePoint.x;
 }
 
 @end

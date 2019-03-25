@@ -7,13 +7,14 @@
 //
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "AMXWindow.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    self.window = [UIWindow new];
+    self.window = [AMXWindow new];
     // Задание ViewController'a:
     MainViewController *mainViewController = [MainViewController new];
     self.window.rootViewController = mainViewController;

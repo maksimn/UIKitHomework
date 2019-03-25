@@ -12,6 +12,7 @@
 		0C6C13DF224558F500EEA9AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C6C13DE224558F500EEA9AD /* Assets.xcassets */; };
 		0C6C13E2224558F500EEA9AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C6C13E0224558F500EEA9AD /* LaunchScreen.storyboard */; };
 		0C6C13E5224558F500EEA9AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6C13E4224558F500EEA9AD /* main.m */; };
+		0C89925822493A580026385A /* AMXWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C89925722493A580026385A /* AMXWindow.m */; };
 		0CD58D512246996A00614256 /* AMXCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD58D502246996A00614256 /* AMXCustomView.m */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,8 @@
 		0C6C13E1224558F500EEA9AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C6C13E3224558F500EEA9AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C6C13E4224558F500EEA9AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0C89925622493A580026385A /* AMXWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMXWindow.h; sourceTree = "<group>"; };
+		0C89925722493A580026385A /* AMXWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMXWindow.m; sourceTree = "<group>"; };
 		0CD58D4F2246996A00614256 /* AMXCustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMXCustomView.h; sourceTree = "<group>"; };
 		0CD58D502246996A00614256 /* AMXCustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMXCustomView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +72,8 @@
 				0C6C13E4224558F500EEA9AD /* main.m */,
 				0CD58D4F2246996A00614256 /* AMXCustomView.h */,
 				0CD58D502246996A00614256 /* AMXCustomView.m */,
+				0C89925622493A580026385A /* AMXWindow.h */,
+				0C89925722493A580026385A /* AMXWindow.m */,
 			);
 			path = UIKitHomework;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C89925822493A580026385A /* AMXWindow.m in Sources */,
 				0C6C13DA224558F400EEA9AD /* MainViewController.m in Sources */,
 				0C6C13E5224558F500EEA9AD /* main.m in Sources */,
 				0C6C13D7224558F400EEA9AD /* AppDelegate.m in Sources */,
