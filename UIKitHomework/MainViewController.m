@@ -54,9 +54,7 @@
 
 - (void) refreshButtonPressHandler
 {
-    NSLog(@"refreshButtonPressHandler");
-    self.refreshButton=nil;
-    self.customView=nil;
+    [[self.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self viewDidLoad];
 }
 
