@@ -19,19 +19,23 @@
 
 @implementation MainViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view, typically from a nib.
-    //подготовка интерфейса ВТОРАЯ ЧАСТЬ ЗАНЯТИЯ
+    [self createMainViewUI];
+}
+
+- (void)createMainViewUI
+{
     [self setupRefreshButton];
-    [self prepareUi_NEW];
+    [self prepareAMXCustomView];
     
     AMXWindow *amxWindow = (AMXWindow *) self.view.window;
     self.view.window.backgroundColor = amxWindow.initialColor;
 }
 
-- (void) setupRefreshButton
+- (void)setupRefreshButton
 {
     self.refreshButton = [[UIButton alloc] initWithFrame:CGRectMake(50,30,120,40)];
     
@@ -45,7 +49,7 @@
 }
 
 //подготовка интерфейса
-- (void) prepareUi_NEW
+- (void) prepareAMXCustomView
 {
     //создали предствавление
     self.customView = [[AMXCustomView alloc] initWithFrame:CGRectMake(50, 100, 60, 70)];
@@ -57,7 +61,7 @@
 - (void) refreshButtonPressHandler
 {
     [[self.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self viewDidLoad];
+    [self createMainViewUI];
 }
 
 @end
