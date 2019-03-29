@@ -10,6 +10,15 @@
 #import "AMXWindow.h"
 
 
+@interface AMXWindow ()
+
+
+@property double previousX;
+
+
+@end
+
+
 @implementation AMXWindow
 
 
@@ -23,21 +32,19 @@
     return self;
 }
 
-double previousX;
-
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = touches.anyObject;
     CGPoint point = [touch locationInView:self];
     double screenWidth = self.frame.size.width;
     
-    if (point.x >= previousX)
+    if (point.x >= self.previousX)
     {
         double colorValue = point.x / screenWidth;
         self.backgroundColor = [UIColor colorWithRed:colorValue green:colorValue blue:colorValue alpha:1.0];
     }
     
-    previousX = point.x;
+    self.previousX = point.x;
 }
 
 -(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

@@ -10,11 +10,18 @@
 #import "AMXCustomView.h"
 
 
+@interface AMXCustomView ()
+
+
+@property double offsetX;
+@property double offsetY;
+
+
+@end
+
+
 @implementation AMXCustomView
 
-
-double offsetX;
-double offsetY;
 
 #pragma mark - UIView Touches Handling
 
@@ -24,8 +31,8 @@ double offsetY;
     CGPoint  point = [touch locationInView:self];
     NSLog(@"Касание %.0f %.0f", point.x, point.y);
     
-    offsetX = (self.frame.size.width / 2.0) - point.x;
-    offsetY = (self.frame.size.height / 2.0) - point.y;
+    self.offsetX = (self.frame.size.width / 2.0) - point.x;
+    self.offsetY = (self.frame.size.height / 2.0) - point.y;
 }
 
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -34,8 +41,8 @@ double offsetY;
     CGPoint point = [touch locationInView:self];
     NSLog(@"Перетаскивание %.0f %.0f", point.x, point.y);
     
-    point.x = point.x + self.frame.origin.x + offsetX;
-    point.y = point.y + self.frame.origin.y + offsetY;
+    point.x = point.x + self.frame.origin.x + self.offsetX;
+    point.y = point.y + self.frame.origin.y + self.offsetY;
     
     self.center = point;
 }
@@ -43,7 +50,7 @@ double offsetY;
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     UITouch * touch = touches.anyObject;
-    CGPoint  point = [touch locationInView:self];
+    CGPoint point = [touch locationInView:self];
     NSLog(@"Конец %.0f %.0f", point.x, point.y);
 }
 
