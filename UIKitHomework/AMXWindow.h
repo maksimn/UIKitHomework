@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AMXWindow : UIWindow
 
--(UIColor *) getInitialColor;
+@property (strong, nonatomic) UIColor *initialColor;
 
 @end
 

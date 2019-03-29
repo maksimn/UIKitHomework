@@ -28,7 +28,7 @@
     [self prepareUi_NEW];
     
     AMXWindow *amxWindow = (AMXWindow *) self.view.window;
-    self.view.window.backgroundColor = [amxWindow getInitialColor];
+    self.view.window.backgroundColor = amxWindow.initialColor;
 }
 
 - (void) setupRefreshButton

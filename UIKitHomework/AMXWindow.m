@@ -14,7 +14,8 @@
 {
     if (self = [super init])
     {
-        self.backgroundColor = [self getInitialColor];
+        self.initialColor = UIColor.greenColor;
+        self.backgroundColor = self.initialColor;
     }
     return self;
 }
@@ -38,12 +39,7 @@ double previousX;
 
 -(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    self.backgroundColor = [self getInitialColor];
-}
-
--(UIColor *) getInitialColor
-{
-    return [UIColor greenColor];
+    self.backgroundColor = self.initialColor;
 }
 
 @end
