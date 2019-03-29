@@ -13,8 +13,8 @@
 @interface AMXCustomView ()
 
 
-@property double offsetX;
-@property double offsetY;
+@property (nonatomic, assign) double offsetX;
+@property (nonatomic, assign) double offsetY;
 
 
 @end

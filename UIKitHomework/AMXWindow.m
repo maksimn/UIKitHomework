@@ -13,7 +13,7 @@
 @interface AMXWindow ()
 
 
-@property double previousX;
+@property (nonatomic, assign) double previousX;
 
 
 @end
