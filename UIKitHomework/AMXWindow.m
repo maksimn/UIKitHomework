@@ -6,9 +6,12 @@
 //  Copyright © 2019 Maksim Ivanov. All rights reserved.
 //
 
+
 #import "AMXWindow.h"
 
+
 @implementation AMXWindow
+
 
 - (instancetype) init
 {
@@ -41,5 +44,6 @@ double previousX;
 {
     self.backgroundColor = self.initialColor;
 }
+
 
 @end
